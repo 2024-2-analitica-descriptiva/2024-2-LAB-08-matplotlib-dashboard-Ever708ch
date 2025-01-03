@@ -39,7 +39,7 @@ def pregunta_01():
     import pandas as pd
     import matplotlib.pyplot as plt
     # Ruta de datos y carpeta de salida
-    data_path = "./data/shipping-data.csv"
+    data_path = "files/input/shipping-data.csv"
     output_dir = "docs"
 
     # Crear la carpeta `docs` si no existe
