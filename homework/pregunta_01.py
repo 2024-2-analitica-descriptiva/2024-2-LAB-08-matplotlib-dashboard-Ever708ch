@@ -109,7 +109,7 @@ def pregunta_01():
         )
         plt.xlabel("Weight (gms)")
         plt.ylabel("Frequency")
-        output_file = os.path.join(output_dir, "weight_in_gms.png")
+        output_file = os.path.join(output_dir, "weight_distribution.png")
         plt.savefig(output_file)
         print(f"Archivo generado: {output_file}")
         plt.close()
