@@ -138,7 +138,7 @@ def pregunta_01():
     </html>
     """
 
-    with open(os.path.join(output_dir, "dashboard.html"), "w") as f:
+    with open(os.path.join(output_dir, "index.html"), "w") as f:
         f.write(html_content)
 
     print(f"Dashboard generado en la carpeta: {output_dir}")
