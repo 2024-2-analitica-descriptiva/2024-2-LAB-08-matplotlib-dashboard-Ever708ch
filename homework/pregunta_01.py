@@ -38,13 +38,14 @@ def pregunta_01():
     import os
     import pandas as pd
     import matplotlib.pyplot as plt
+
     # Ruta de datos y carpeta de salida
     data_path = "./files/input/shipping-data.csv"
-    output_dir = "docs"
-
+    output_dir = os.path.join(os.getcwd(), "docs")  # Usar ruta absoluta para `docs`
 
     # Crear la carpeta `docs` si no existe
     os.makedirs(output_dir, exist_ok=True)
+    print(f"La carpeta {output_dir} se creó o ya existía.")
 
     # Cargar los datos
     def load_data():
@@ -65,7 +66,9 @@ def pregunta_01():
         )
         plt.gca().spines["top"].set_visible(False)
         plt.gca().spines["right"].set_visible(False)
-        plt.savefig(f"{output_dir}/shipping_per_warehouse.png")
+        output_file = os.path.join(output_dir, "shipping_per_warehouse.png")
+        plt.savefig(output_file)
+        print(f"Archivo generado: {output_file}")
         plt.close()
 
     # Crear visualización para Mode_of_Shipment
@@ -78,7 +81,9 @@ def pregunta_01():
             ylabel="",
             colors=["tab:blue", "tab:orange", "tab:green"],
         )
-        plt.savefig(f"{output_dir}/mode_of_shipment.png")
+        output_file = os.path.join(output_dir, "mode_of_shipment.png")
+        plt.savefig(output_file)
+        print(f"Archivo generado: {output_file}")
         plt.close()
 
     # Crear visualización para Customer_rating
@@ -92,7 +97,9 @@ def pregunta_01():
             color="tab:green",
             fontsize=8,
         )
-        plt.savefig(f"{output_dir}/customer_rating.png")
+        output_file = os.path.join(output_dir, "customer_rating.png")
+        plt.savefig(output_file)
+        print(f"Archivo generado: {output_file}")
         plt.close()
 
     # Crear visualización para Weight_in_gms
@@ -103,7 +110,9 @@ def pregunta_01():
         )
         plt.xlabel("Weight (gms)")
         plt.ylabel("Frequency")
-        plt.savefig(f"{output_dir}/weight_in_gms.png")
+        output_file = os.path.join(output_dir, "weight_in_gms.png")
+        plt.savefig(output_file)
+        print(f"Archivo generado: {output_file}")
         plt.close()
 
     # Llamar a las funciones de visualización
@@ -130,7 +139,8 @@ def pregunta_01():
     </html>
     """
 
-    with open(f"{output_dir}/dashboard.html", "w") as f:
+    with open(os.path.join(output_dir, "dashboard.html"), "w") as f:
         f.write(html_content)
 
     print(f"Dashboard generado en la carpeta: {output_dir}")
+    print(f"Directorio actual: {os.getcwd()}")
