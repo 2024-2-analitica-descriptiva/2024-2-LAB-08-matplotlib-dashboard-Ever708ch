@@ -3,7 +3,6 @@
 Escriba el codigo que ejecute la accion solicitada.
 """
 
-
 def pregunta_01():
     """
     El archivo `files//shipping-data.csv` contiene información sobre los envios
@@ -97,7 +96,7 @@ def pregunta_01():
             color="tab:green",
             fontsize=8,
         )
-        output_file = os.path.join(output_dir, "customer_rating.png")
+        output_file = os.path.join(output_dir, "average_customer_rating.png")  # Cambiado el nombre del archivo
         plt.savefig(output_file)
         print(f"Archivo generado: {output_file}")
         plt.close()
@@ -132,7 +131,7 @@ def pregunta_01():
         <h2>Mode of Shipment</h2>
         <img src="mode_of_shipment.png" width="600">
         <h2>Customer Rating</h2>
-        <img src="customer_rating.png" width="600">
+        <img src="average_customer_rating.png" width="600">  <!-- Cambiado el nombre -->
         <h2>Weight in gms</h2>
         <img src="weight_in_gms.png" width="600">
     </body>
@@ -144,3 +143,4 @@ def pregunta_01():
 
     print(f"Dashboard generado en la carpeta: {output_dir}")
     print(f"Directorio actual: {os.getcwd()}")
+
